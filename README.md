@@ -8,6 +8,12 @@
 
 ---
 
+## 🌐 Live Demo
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://wine-classification-project.streamlit.app)
+
+---
+
 ## 📋 Table of Contents
 
 - [Overview](#overview)
@@ -15,7 +21,7 @@
 - [Installation](#installation)
 - [Task Breakdown](#task-breakdown)
 - [How to Run](#how-to-run)
-- [Screenshots](#screenshots)
+- [Streamlit Cloud Deployment](#streamlit-cloud-deployment)
 - [Technologies Used](#technologies-used)
 
 ---
@@ -41,6 +47,7 @@ wine_classification_project/
 ├── wine_classification.py    # Main Python script (Tasks a-d)
 ├── streamlit_app.py          # Streamlit web application (Task e)
 ├── README.md                 # Project documentation
+├── requirements.txt          # Python dependencies
 │
 ├── best_wine_model.pkl       # Saved best model (generated)
 ├── scaler.pkl                # Saved StandardScaler (generated)
@@ -58,7 +65,14 @@ wine_classification_project/
 
 Make sure you have Python 3.8+ installed on your system.
 
-### Step 1: Create Virtual Environment (Optional but Recommended)
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/jahanzaib-codes/wine_classification_project.git
+cd wine_classification_project
+```
+
+### Step 2: Create Virtual Environment (Optional but Recommended)
 
 ```bash
 python -m venv venv
@@ -70,28 +84,10 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### Step 2: Install Required Packages
-
-```bash
-pip install numpy pandas matplotlib seaborn scikit-learn joblib streamlit
-```
-
-Or install all at once:
+### Step 3: Install Required Packages
 
 ```bash
 pip install -r requirements.txt
-```
-
-### Requirements.txt
-
-```
-numpy>=1.21.0
-pandas>=1.3.0
-matplotlib>=3.4.0
-seaborn>=0.11.0
-scikit-learn>=0.24.0
-joblib>=1.0.0
-streamlit>=1.0.0
 ```
 
 ---
@@ -145,12 +141,11 @@ For each model:
 
 ---
 
-## 🚀 How to Run
+## 🚀 How to Run Locally
 
 ### Step 1: Train Models and Generate Analysis
 
 ```bash
-cd wine_classification_project
 python wine_classification.py
 ```
 
@@ -172,81 +167,66 @@ This will open the web application in your default browser at `http://localhost:
 
 ---
 
-## 📊 Expected Output
+## ☁️ Streamlit Cloud Deployment
 
-### Console Output (wine_classification.py)
+### Step-by-Step Deployment Guide
+
+#### Step 1: Go to Streamlit Cloud
+
+Visit [share.streamlit.io](https://share.streamlit.io)
+
+#### Step 2: Sign In
+
+Sign in with your **GitHub account**
+
+#### Step 3: Create New App
+
+1. Click **"New app"** button
+2. Select your repository: `jahanzaib-codes/wine_classification_project`
+3. Select branch: `main`
+4. Main file path: `streamlit_app.py`
+5. Click **"Deploy!"**
+
+#### Step 4: Wait for Deployment
+
+- Streamlit will automatically install dependencies from `requirements.txt`
+- The app will be deployed and you'll get a public URL
+
+#### Your App URL will be:
 
 ```
-================================================================================
-DATA SCIENCE FINAL LAB EXAM – VARIANT 1
-Wine Dataset Multiclass Classification with PCA & Model Deployment
-================================================================================
+https://wine-classification-project.streamlit.app
+```
 
-================================================================================
-TASK A: DATA LOADING, CLEANING & EXPLORATION
-================================================================================
+or
 
-📊 Dataset Shapes:
-   X (Features) shape: (178, 13)
-   y (Target) shape: (178,)
-   Number of samples: 178
-   Number of features: 13
-
-🏷️ Class Distribution:
-   Class 0 (class_0): 59 samples (33.1%)
-   Class 1 (class_1): 71 samples (39.9%)
-   Class 2 (class_2): 48 samples (27.0%)
-
-⚖️ Balance Analysis:
-   ✅ Dataset is BALANCED (ratio >= 0.8)
-
-... (more output)
-
-🏆 MODEL COMPARISON & BEST CLASSIFIER
-
-   🥇 Best Classifier: Random Forest
-   📊 Accuracy: 0.9722 (97.22%)
+```
+https://[your-app-name].streamlit.app
 ```
 
 ---
 
-## 🖼️ Screenshot Preview
+### 📝 Important Notes for Deployment
 
-### Streamlit Application Features:
-
-- 🎨 **Premium Dark Theme UI**
-- 📊 **Interactive Sliders** for all 13 wine features
-- 🔮 **Real-time Predictions** with class probabilities
-- 📋 **Model Information** sidebar
-- 🧪 **Quick Test** with sample data
-- 📱 **Responsive Design**
+1. **requirements.txt** - Streamlit Cloud uses this file to install dependencies
+2. **Model files (.pkl)** - These are included in the repo and will be used by the app
+3. **Free tier** - Streamlit Cloud is FREE for public repositories
 
 ---
 
-## 🛠️ Technologies Used
-
-| Technology | Purpose |
-|------------|---------|
-| Python 3.x | Programming Language |
-| NumPy | Numerical Computing |
-| Pandas | Data Manipulation |
-| Matplotlib | Visualization |
-| Seaborn | Statistical Visualization |
-| Scikit-learn | Machine Learning |
-| Joblib | Model Serialization |
-| Streamlit | Web App Framework |
-
----
-
-## 📈 Model Performance Summary
+## 📊 Model Performance Summary
 
 | Model | Accuracy |
 |-------|----------|
 | Decision Tree | ~94.44% |
-| Random Forest | ~97.22% |
-| SVM | ~97.22% |
+| Random Forest | ~94.44% |
+| **SVM (Best)** | **~97.22%** |
 
-> **Note:** Actual results may vary slightly due to random state.
+---
+
+## 📈 Visualizations
+
+![Wine Classification Analysis](wine_classification_analysis.png)
 
 ---
 
@@ -272,6 +252,21 @@ The Wine dataset contains 13 chemical properties:
 
 ---
 
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| Python 3.x | Programming Language |
+| NumPy | Numerical Computing |
+| Pandas | Data Manipulation |
+| Matplotlib | Visualization |
+| Seaborn | Statistical Visualization |
+| Scikit-learn | Machine Learning |
+| Joblib | Model Serialization |
+| Streamlit | Web App Framework |
+
+---
+
 ## 🎓 Author
 
 **Jahanzaib Channa**  
@@ -282,11 +277,3 @@ Data Science Final Lab Exam – Variant 1
 ## 📄 License
 
 This project is created for educational purposes as part of a Final Lab Exam.
-
----
-
-## 🙏 Acknowledgments
-
-- Scikit-learn for providing the Wine dataset
-- Streamlit for the amazing web framework
-- Course instructors for the exam guidelines
